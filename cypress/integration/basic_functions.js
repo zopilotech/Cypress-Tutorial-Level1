@@ -20,6 +20,16 @@ describe('basic Function', function() {
         //Get Title Assertions
         cy.get('.brand').should('have.text', 'GREENKART');
         cy.get('.redLogo').should('have.text', 'KART');
+        cy.wait(1000)
+
+        //Click on Button Several times for Carrot
+        for(let n = 0; n < 10; n ++){
+            cy.get(':nth-child(1) > .stepper-input > .increment')
+              .click()
+          }    
+
+
+        cy.get('.search-keyword').clear();
 
         //cy.get('[href="#/offers"]').click();
         //cy.get('#page-menu').select('10');
@@ -28,7 +38,9 @@ describe('basic Function', function() {
   
 })
 
-describe('Dropdown and click buttons', function() {
+
+
+describe('DROPDOWN/BUTTON/ASSERT TEXT VALUE', function() {
     it('Dropdown and click buttons', function(){
         //visit any web site
         cy.visit("https://rahulshettyacademy.com/seleniumPractise/#/offers");
